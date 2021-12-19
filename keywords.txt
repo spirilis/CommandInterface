@@ -1,0 +1,23 @@
+#######################################
+# Syntax Coloring Map CommandInterface
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+CLICommand	KEYWORD1
+CommandInterfaceManifest	KEYWORD1
+CommandInterface	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+processInput	KEYWORD2
+executeInput	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+CLI_MAX_ARGUMENTS   LITERAL1
