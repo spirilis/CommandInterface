@@ -7,7 +7,6 @@
 #######################################
 
 CLICommand	KEYWORD1
-CommandInterfaceManifest	KEYWORD1
 CommandInterface	KEYWORD1
 
 #######################################
@@ -16,6 +15,7 @@ CommandInterface	KEYWORD1
 begin	KEYWORD2
 processInput	KEYWORD2
 executeInput	KEYWORD2
+processSubCommand	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
