@@ -53,7 +53,7 @@ class CommandInterface
     CommandInterface(const CLICommand *);
     void begin(Stream *, char *, unsigned int sz);  // Initialize the Command Line Interface based around a Stream object
     // ^ begin() requires providing a character buffer of specified size for collecting input.
-    bool processInput();  // Run underlying Stream.available() and process bytes, execute commands as necessary
+    bool processInput();  // Run underlying Stream.available() and process bytes, parsing arguments
                           // Returns true if an input string was processed & is ready to execute.  Execution of command
                           // is deferred to executeInput().  This function is callable from Interrupt handlers.
                           // If executed with true return value prior & command still hasn't been executed, it will
@@ -61,7 +61,8 @@ class CommandInterface
 
     bool executeInput();  // Execute pending input command.  This function is not intended to be called from an Interrupt
                           // handler but is used to followup from a processInput() that was called via Interrupt routine
-                          // in a general sleep state.
+                          // in a general sleep state. (Usually in this situation, processInput() returning true
+                          // results in the processor being awoken from a deeper sleep state.)
                           // Returns true if the command was a valid command, false if command not found.
     bool processSubCommand(const CLICommand *, const int argc, const char **argv);
                           // ^ Callable from inside a command callback function, this can process sub-commands.
