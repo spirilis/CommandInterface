@@ -29,7 +29,7 @@ class CommandInterface;
 
 typedef struct {
   const char * cmd;  // Command string
-  // Handler function takes argc, argv, the Stream (for printing), and optional data (void *)
+  // Handler function takes argc, argv, the Stream (for printing), the CommandInterface object itself (for processSubCommand), and optional data (void *)
   bool (*handler_func)(int argc, const char ** argv, Stream *, CommandInterface *, void *);
   void *handler_data;  // Arbitrary data to pass to handler_func's 2nd argument
 } CLICommand;
